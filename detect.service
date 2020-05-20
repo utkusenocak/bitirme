@@ -1,0 +1,15 @@
+[Unit]
+
+Description=Detect Object
+
+[Service]
+
+User=utku
+Group=utku
+WorkingDirectory=/home/utku/bitirme/yoloV3
+Environment="PATH=/home/utku/bitirme/yoloV3/detectVenv/bin"
+ExecStart=/home/utku/bitirme/yoloV3/detectVenv/bin/python /home/utku/bitirme/yoloV3/detect.py
+ExecStop=/bin/kill -INT $MAINPID
+
+[Install]
+WantedBy=multi-user.target
